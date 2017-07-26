@@ -10,7 +10,6 @@ declare var jQuery: any;
 export class TopNavbarComponent {
   toggleNavigation(): void {
     jQuery("body").toggleClass("mini-navbar");
-    jQuery(".chevron").toggleClass("chevron-right");
     smoothlyMenu();
   }
 }
