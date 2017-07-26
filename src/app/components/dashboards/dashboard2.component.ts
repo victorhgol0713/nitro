@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit, } from '@angular/core';
 
-import { FlotChartDirective } from '../../components/charts/flotChart';
+import { FlotChartDirective } from '../charts/flotChart';
 
 declare var jQuery:any;
 
 @Component({
   selector: 'dashboard2',
-  templateUrl: 'dashboard2.template.html'
+  templateUrl: './dashboard2.template.html'
 })
 
 export class Dashboard2Component implements OnDestroy, OnInit {

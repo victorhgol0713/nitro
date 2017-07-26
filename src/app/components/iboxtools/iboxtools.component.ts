@@ -3,7 +3,7 @@ declare var jQuery:any;
 
 @Component({
   selector: 'iboxtools',
-  templateUrl: 'iboxtools.template.html'
+  templateUrl: './iboxtools.template.html'
 })
 export class IboxtoolsComponent {
 
@@ -27,6 +27,4 @@ export class IboxtoolsComponent {
     let content = jQuery(e.target).closest('div.ibox');
     content.remove();
   }
-
-
 }

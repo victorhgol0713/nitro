@@ -4,13 +4,13 @@ import {Router} from '@angular/router';
 // Import Chart.js library
 import 'chart.js';
 
-import { FlotChartDirective } from '../../components/charts/flotChart';
+import { FlotChartDirective } from '../charts/flotChart';
 
 declare var jQuery:any;
 
 @Component({
   selector: 'dashboard1',
-  templateUrl: 'dashboard1.template.html'
+  templateUrl: './dashboard1.template.html'
 })
 
 export class Dashboard1Component {

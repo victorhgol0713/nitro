@@ -6,7 +6,7 @@ import {IboxtoolsComponent} from "./iboxtools.component";
 
 @NgModule({
   declarations: [IboxtoolsComponent],
-  imports     : [BrowserModule,BsDropdownModule.forRoot()],
+  imports     : [BrowserModule, BsDropdownModule.forRoot()],
   exports     : [IboxtoolsComponent],
 })
 

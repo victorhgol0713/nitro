@@ -1,20 +1,20 @@
 import {Routes} from "@angular/router";
 
-import {Dashboard1Component} from "./views/dashboards/dashboard1.component";
-import {Dashboard2Component} from "./views/dashboards/dashboard2.component";
-import {Dashboard3Component} from "./views/dashboards/dashboard3.component";
-import {Dashboard4Component} from "./views/dashboards/dashboard4.component";
-import {Dashboard41Component} from "./views/dashboards/dashboard41.component";
-import {Dashboard5Component} from "./views/dashboards/dashboard5.component";
+import {Dashboard1Component} from "./components/dashboards/dashboard1.component";
+import {Dashboard2Component} from "./components/dashboards/dashboard2.component";
+import {Dashboard3Component} from "./components/dashboards/dashboard3.component";
+import {Dashboard4Component} from "./components/dashboards/dashboard4.component";
+import {Dashboard41Component} from "./components/dashboards/dashboard41.component";
+import {Dashboard5Component} from "./components/dashboards/dashboard5.component";
 
-import {StarterViewComponent} from "./views/appviews/starterview.component";
-import {LoginComponent} from "./views/appviews/login.component";
+import {StarterViewComponent} from "./components/appviews/starterview.component";
+import {LoginComponent} from "./components/appviews/login.component";
 
-import {BlankLayoutComponent} from "./components/common/layouts/blankLayout.component";
-import {BasicLayoutComponent} from "./components/common/layouts/basicLayout.component";
-import {TopNavigationLayoutComponent} from "./components/common/layouts/topNavigationlayout.component";
+import {BlankLayoutComponent} from "./components/layouts/blankLayout.component";
+import {BasicLayoutComponent} from "./components/layouts/basicLayout.component";
+import {TopNavigationLayoutComponent} from "./components/layouts/topNavigationLayout.component";
 
-export const ROUTES:Routes = [
+export const ROUTES: Routes = [
   // Main redirect
   {path: '', redirectTo: 'starterview', pathMatch: 'full'},
 

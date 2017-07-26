@@ -5,8 +5,8 @@ import {RouterModule} from "@angular/router";
 import {StarterViewComponent} from "./starterview.component";
 import {LoginComponent} from "./login.component";
 
-import {PeityModule } from '../../components/charts/peity';
-import {SparklineModule } from '../../components/charts/sparkline';
+import {PeityModule } from '../charts/peity';
+import {SparklineModule } from '../charts/sparkline';
 
 @NgModule({
   declarations: [

@@ -4,7 +4,7 @@ declare var jQuery:any;
 
 @Component({
   selector: 'dashboard41',
-  templateUrl: 'dashboard41.template.html'
+  templateUrl: './dashboard41.template.html'
 })
 
 export class Dashboard41Component implements OnDestroy, OnInit {
