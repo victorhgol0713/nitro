@@ -7,8 +7,8 @@ import {Dashboard4Component} from "./components/dashboards/dashboard4.component"
 import {Dashboard41Component} from "./components/dashboards/dashboard41.component";
 import {Dashboard5Component} from "./components/dashboards/dashboard5.component";
 
-import {StarterViewComponent} from "./components/appviews/starterview.component";
-import {LoginComponent} from "./components/appviews/login.component";
+import {HomeComponent} from "./components/home/home.component";
+import {LoginComponent} from "./components/login/login.component";
 
 import {BlankLayoutComponent} from "./components/layouts/blankLayout.component";
 import {BasicLayoutComponent} from "./components/layouts/basicLayout.component";
@@ -16,7 +16,7 @@ import {TopNavigationLayoutComponent} from "./components/layouts/topNavigationLa
 
 export const ROUTES: Routes = [
   // Main redirect
-  {path: '', redirectTo: 'starterview', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
 
   // App views
   {
@@ -38,7 +38,7 @@ export const ROUTES: Routes = [
   {
     path: '', component: BasicLayoutComponent,
     children: [
-      {path: 'starterview', component: StarterViewComponent}
+      {path: 'home', component: HomeComponent}
     ]
   },
   {
@@ -49,5 +49,5 @@ export const ROUTES: Routes = [
   },
 
   // Handle all other routes
-  {path: '**',  redirectTo: 'starterview'}
+  {path: '**',  redirectTo: 'home'}
 ];

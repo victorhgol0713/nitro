@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit, } from '@angular/core';
 
 @Component({
-  selector: 'starter',
-  templateUrl: './starter.template.html'
+  selector: 'home',
+  templateUrl: './home.template.html'
 })
-export class StarterViewComponent implements OnDestroy, OnInit  {
+export class HomeComponent implements OnDestroy, OnInit  {
 
 public nav:any;
 

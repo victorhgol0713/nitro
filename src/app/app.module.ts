@@ -10,14 +10,16 @@ import { AppComponent } from './app.component';
 
 // App views
 import {DashboardsModule} from "./components/dashboards/dashboards.module";
-import {AppviewsModule} from "./components/appviews/appviews.module";
+import {AppviewsModule} from "./components/home/appviews.module";
 
 // App modules/components
 import {LayoutsModule} from "./components/layouts/layouts.module";
+import {LoginComponent} from "./components/login/login.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
