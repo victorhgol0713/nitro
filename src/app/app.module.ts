@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule} from "@angular/router";
+import {BsDropdownModule} from 'ngx-bootstrap';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 import {ROUTES} from "./app.routes";
@@ -10,27 +11,55 @@ import { AppComponent } from './app.component';
 
 // App views
 import {DashboardsModule} from "./components/dashboards/dashboards.module";
-import {AppviewsModule} from "./components/home/appviews.module";
+import {HomeComponent} from "./components/home/home.component";
+
+import {PeityModule } from './components/charts/peity';
+import {SparklineModule } from './components/charts/sparkline';
 
 // App modules/components
-import {LayoutsModule} from "./components/layouts/layouts.module";
+import {BasicLayoutComponent} from "./components/layouts/basicLayout.component";
+import {BlankLayoutComponent} from "./components/layouts/blankLayout.component";
+import {TopNavigationLayoutComponent} from "./components/layouts/topNavigationLayout.component";
+
+import {NavigationComponent} from "./components/navigation/navigation.component";
+import {FooterComponent} from "./components/footer/footer.component";
+import {TopNavbarComponent} from "./components/topnavbar/topnavbar.component";
+import {TopNavigationNavbarComponent} from "./components/topnavbar/topnavigationnavbar.component";
+import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './components/localization/imports';
+
 import {LoginComponent} from "./components/login/login.component";
+import {AboutComponent} from "./components/about/about.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AboutComponent,
+    TranslatePipe,
+    FooterComponent,
+    BasicLayoutComponent,
+    BlankLayoutComponent,
+    NavigationComponent,
+    TopNavigationLayoutComponent,
+    TopNavbarComponent,
+    TopNavigationNavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     DashboardsModule,
-    LayoutsModule,
-    AppviewsModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    BsDropdownModule.forRoot(),
+    PeityModule,
+    SparklineModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    TRANSLATION_PROVIDERS,
+    TranslateService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

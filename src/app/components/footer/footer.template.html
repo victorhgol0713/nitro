@@ -1,8 +1,16 @@
 <div class="footer">
   <div class="pull-right">
-    10GB of <strong>250GB</strong> Free.
+    <button (click)="selectLang(supportedLangs[0].value)"
+            class="btn btn-default" [class.btn-primary]="isCurrentLang(supportedLangs[0].value)">
+      {{ supportedLangs[0].display }}
+    </button>
+    <i class="fa fa-circle" aria-hidden="true"></i>
+    <button (click)="selectLang(supportedLangs[1].value)"
+            class="btn btn-default" [class.btn-primary]="isCurrentLang(supportedLangs[1].value)">
+      {{ supportedLangs[1].display }}
+    </button>
   </div>
   <div>
-    <strong>Copyright</strong> Example Company &copy; 2014-2017
+    <strong>Copyright</strong> Kiinitro Team &copy; 2017
   </div>
 </div>
