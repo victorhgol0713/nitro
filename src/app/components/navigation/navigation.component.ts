@@ -1,16 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import 'jquery-slimscroll';
 
-declare var jQuery:any;
+import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
+
+declare var jQuery: any;
 
 @Component({
   selector: 'navigation',
-  templateUrl: './navigation.template.html'
+  templateUrl: './navigation.template.html',
+  styles: [ require('./navigation.component.less') ]
 })
 
-export class NavigationComponent {
-  constructor(private router: Router) { };
+export class NavigationComponent implements OnInit {
+  constructor(private router: Router, public auth: AuthService, public user: UserService) { };
+
+  ngOnInit() {
+    if (this.auth.isAuthenticated() && jQuery.isEmptyObject(this.user.data)) {
+      this.user.data = JSON.parse(localStorage['user_data']);
+    }
+  };
 
   ngAfterViewInit() {
     jQuery('#side-menu').metisMenu();
@@ -22,7 +32,7 @@ export class NavigationComponent {
     }
   }
 
-  activeRoute(routename: string): boolean{
+  activeRoute(routename: string): boolean {
     return this.router.url.indexOf(routename) > -1;
   }
 }

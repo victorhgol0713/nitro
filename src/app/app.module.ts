@@ -30,6 +30,12 @@ import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './compon
 import {LoginComponent} from "./components/login/login.component";
 import {AboutComponent} from "./components/about/about.component";
 
+/**
+ * services
+ * */
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +65,8 @@ import {AboutComponent} from "./components/about/about.component";
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     TRANSLATION_PROVIDERS,
     TranslateService,
+    AuthService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

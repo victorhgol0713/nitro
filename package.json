@@ -26,6 +26,7 @@
     "@types/node": "^6.0.85",
     "angular2-template-loader": "^0.6.2",
     "animate.css": "3.1.1",
+    "auth0-js": "^8.8.0",
     "awesome-typescript-loader": "^3.2.1",
     "bootstrap": "^3.3.7",
     "chart.js": "^2.5.0",
