@@ -15,7 +15,7 @@ export class AuthService {
     domain: 'kiinitro.auth0.com',
     responseType: 'token id_token',
     audience: 'https://kiinitro.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200/callback',
+    redirectUri: 'http://kiinitro.s3-website-us-west-2.amazonaws.com/callback',
     scope: 'openid profile'
   });
 
