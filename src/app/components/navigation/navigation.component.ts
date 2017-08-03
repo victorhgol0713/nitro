@@ -17,7 +17,7 @@ export class NavigationComponent implements OnInit {
   constructor(private router: Router, public auth: AuthService, public user: UserService) { };
 
   ngOnInit() {
-    if (this.auth.isAuthenticated() && jQuery.isEmptyObject(this.user.data)) {
+    if (this.auth.isAuthenticated()) {
       this.user.data = JSON.parse(localStorage['user_data']);
     }
   };
