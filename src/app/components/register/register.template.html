@@ -1,26 +1,68 @@
 <div class="row wrapper border-bottom white-bg page-heading">
   <div class="col-sm-4">
-    <h2>{{ 'register' | translate }}</h2>
+    <h2>{{ 'welcome' | translate }}</h2>
     <ol class="breadcrumb">
-      <li>
-        <a href="">Kiinitro</a>
-      </li>
       <li class="active">
-        <strong>{{ 'register' | translate }}</strong>
+        <strong>{{ user.data.nickname }}</strong>
       </li>
     </ol>
   </div>
+  <!--<div class="col-sm-8">
+    <div class="title-action">
+      <a href="" class="btn btn-primary">This is action area</a>
+    </div>
+  </div>-->
 </div>
 
 <div class="wrapper wrapper-content">
-  <div class="middle-box text-center animated fadeInRightBig">
-    <h3 class="font-bold">This is page content</h3>
-    <div class="error-desc">
-      You can create here any grid layout you want. And any variation layout you imagine:) Check out
-      main dashboard and other site. It use many different layout.
-      <br/><a href="" class="btn btn-primary m-t">Dashboard</a>
+  <form method="get" class="form-horizontal">
+    <div class="form-group"><label class="col-sm-2 control-label">{{ 'today' | translate }}</label>
+      <div class="col-sm-10"><select class="form-control m-b" name="account">
+        <option>Pecho</option>
+        <option>Espalda</option>
+        <option>Muslo - Caderas</option>
+      </select>
+      </div>
     </div>
-  </div>
+    <div class="form-group"><label class="col-sm-2 control-label">{{ 'training time' | translate }}</label>
+      <div class="col-sm-10"><input type="text" placeholder="{{ 'months' | translate }}" class="form-control"></div>
+    </div>
+    <div class="form-group"><label class="col-sm-2 control-label">{{ 'target' | translate }}</label>
+      <div class="col-sm-10"><select class="form-control m-b" name="account">
+        <option>Bajar peso</option>
+        <option>Aumentar masa</option>
+        <option>Tonificar</option>
+      </select>
+      </div>
+    </div>
+    <div class="form-group"><label class="col-sm-2 control-label">{{ 'training place' | translate }}</label>
+      <div class="col-sm-10"><select class="form-control m-b" name="account">
+        <option>Casa</option>
+        <option>Gimnasio</option>
+      </select>
+      </div>
+    </div>
+    <div class="form-group subgroup">
+      <div class="subcontainer">
+        <div class="col-sm-10">
+          <input type="text" placeholder="{{ 'weight' | translate }}" class="form-control">
+        </div>
+      </div>
+      <div class="subcontainer">
+        <div class="col-sm-10">
+          <input type="text" placeholder="{{ 'height' | translate }}" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-4 col-sm-offset-2 generate">
+        <button class="btn btn-primary" type="submit">
+          <i class="fa fa-heartbeat" aria-hidden="true"></i>
+          {{ 'generate session' | translate }}
+        </button>
+      </div>
+    </div>
+  </form>
 </div>
 <br />
 <br />

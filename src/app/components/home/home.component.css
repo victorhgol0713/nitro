@@ -1,17 +1,14 @@
 .ibox-content {
   width: 200px;
 }
-
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .slogan {
     font-size: 18px;
   }
-
   .ibox-content {
     width: 250px;
   }
 }
-
 .slick-list {
   padding: 0 !important;
 }

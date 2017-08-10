@@ -50,11 +50,8 @@ export class AuthService {
         this.setSession(authResult);
 
         this.user.isRegistered(authResult.idTokenPayload.sub).then(function(data) {
-          if (jQuery.isEmptyObject(data)) {
-            self.router.navigate(['/register']);
-          }else {
-            self.router.navigate(['/home']);
-          }
+          self.user.data.session = data || {};
+          self.router.navigate(['/register']);
         }).catch((err) => {
           console.log(err);
         });

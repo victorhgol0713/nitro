@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit, } from '@angular/core';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'register',
@@ -6,7 +7,7 @@ import { Component, OnDestroy, OnInit, } from '@angular/core';
   styles: [ require('./register.component.less') ]
 })
 export class RegisterComponent implements OnDestroy, OnInit  {
-  public constructor() { };
+  public constructor(public user: UserService) { };
 
   public ngOnInit(): any { };
 

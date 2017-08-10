@@ -1,0 +1,39 @@
+.navbar {
+  background: url('/assets/images/patterns/1.png');
+}
+.navbar .navbar-header {
+  width: 100%;
+}
+.navbar .navbar-header .minimalize-styl-2 {
+  color: #fff;
+  margin: 15px 5px 5px 5px;
+}
+@media (max-width: 768px) {
+  .navbar .navbar-header .navbar-form-custom {
+    display: block;
+  }
+}
+.navbar .navbar-header .title {
+  color: #fff;
+  float: left;
+  margin: 15px 5px 5px 5px;
+  padding: 4px 12px;
+}
+.navbar .navbar-header .form-group {
+  position: relative;
+}
+.navbar .navbar-header .form-group .fa-search {
+  bottom: 0;
+  color: #CCC;
+  height: 30px;
+  line-height: 30px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 30px;
+}
+.navbar .navbar-header .form-group input {
+  padding: 0 10px 0 30px;
+}

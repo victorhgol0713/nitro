@@ -7,7 +7,8 @@ import 'rxjs/add/operator/catch';
 export class UserService {
   private baseUrl = 'http://localhost:8000';
   public data = {
-    picture: '/assets/images/gallery/6s.jpg'
+    picture: '/assets/images/gallery/6s.jpg',
+    session: {}
   };
   constructor(private http: Http) { };
 
