@@ -6,6 +6,11 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class UserService {
   private baseUrl = 'http://localhost:8000';
+  public registerOptions = {
+      exc: ['chest', 'back', 'thigh - hip'],
+      goals: ['lose weight', 'increase mass', 'to tone'],
+      places: ['house', 'gym']
+  };
   public data = {
     picture: '/assets/images/gallery/6s.jpg',
     session: {}

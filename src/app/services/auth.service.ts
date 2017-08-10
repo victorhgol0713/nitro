@@ -48,13 +48,6 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
-
-        this.user.isRegistered(authResult.idTokenPayload.sub).then(function(data) {
-          self.user.data.session = data || {};
-          self.router.navigate(['/register']);
-        }).catch((err) => {
-          console.log(err);
-        });
       } else if (err) {
         this.router.navigate(['/home']);
         console.log(err);
@@ -63,6 +56,7 @@ export class AuthService {
   }
 
   private setSession(authResult): void {
+    var self = this;
     // Set the time that the access token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
@@ -71,8 +65,20 @@ export class AuthService {
 
     if (this.isAuthenticated()) {
       this.getProfile((err, profile) => {
-        localStorage.setItem('user_data', JSON.stringify(profile));
-        this.user.data = JSON.parse(localStorage['user_data']);
+        profile.session = {exc: 'chest', antiquity: 0, goal: 'lose weight', place: 'house', weight: 0, height: 0};
+
+        this.user.isRegistered(authResult.idTokenPayload.sub).then(function(data) {
+          if (!jQuery.isEmptyObject(data)) {
+            self.user.data.session = data;
+          }
+
+          localStorage.setItem('user_data', JSON.stringify(profile));
+          self.user.data = JSON.parse(localStorage['user_data']);
+
+          self.router.navigate(['/register']);
+        }).catch((err) => {
+          self.router.navigate(['/home']);
+        });
       });
     }
   }
