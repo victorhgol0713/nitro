@@ -11,11 +11,11 @@ export class UserService {
   };
   constructor(private http: Http) { };
 
-  private getUserData(){
-    let url = this.baseUrl + '/domainUser';
+  private getUser(id: string) {
+    let url = this.baseUrl + '/getUser';
     let params: URLSearchParams = new URLSearchParams();
 
-    params.set('domain', domain);
+    params.set('id', id);
 
     return this.http.get(url, { params: params })
       .toPromise()
@@ -23,12 +23,18 @@ export class UserService {
       .then(response => response);
   };
 
-  isRegistered(string: userID){
-    return true;
+  isRegistered(userID: string) {
+    return new Promise((resolve, reject) => {
+      this.getUser(userID).then(response => {
+        resolve(response);
+      }).catch(() => {
+        reject();
+      });
+    });
   };
 
   private extractData(res: Response) {
     const body = res.json();
-    return body.data || {};
+    return body || {};
   };
 }

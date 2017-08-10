@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
 import { UserService } from './user.service';
+declare var jQuery: any;
 
 @Injectable()
 export class AuthService {
@@ -42,16 +43,21 @@ export class AuthService {
   }
 
   public handleAuthentication(): void {
+    var self = this;
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
 
-        if(this.user.isRegistered(authResult.idTokenPayload.sub)){
-          this.router.navigate(['/home']);
-        }else{
-
-        }
+        this.user.isRegistered(authResult.idTokenPayload.sub).then(function(data) {
+          if (jQuery.isEmptyObject(data)) {
+            self.router.navigate(['/register']);
+          }else {
+            self.router.navigate(['/home']);
+          }
+        }).catch((err) => {
+          console.log(err);
+        });
       } else if (err) {
         this.router.navigate(['/home']);
         console.log(err);

@@ -29,6 +29,7 @@ import { TRANSLATION_PROVIDERS, TranslatePipe, TranslateService } from './compon
 
 import {LoginComponent} from "./components/login/login.component";
 import {AboutComponent} from "./components/about/about.component";
+import {RegisterComponent} from "./components/register/register.component";
 
 /**
  * services
@@ -49,7 +50,8 @@ import { UserService } from './services/user.service';
     TopNavigationLayoutComponent,
     TopNavbarComponent,
     TopNavigationNavbarComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

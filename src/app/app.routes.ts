@@ -10,6 +10,7 @@ import {Dashboard5Component} from "./components/dashboards/dashboard5.component"
 import {HomeComponent} from "./components/home/home.component";
 import {LoginComponent} from "./components/login/login.component";
 import {AboutComponent} from "./components/about/about.component";
+import {RegisterComponent} from "./components/register/register.component";
 
 import {BlankLayoutComponent} from "./components/layouts/blankLayout.component";
 import {BasicLayoutComponent} from "./components/layouts/basicLayout.component";
@@ -40,7 +41,8 @@ export const ROUTES: Routes = [
     path: '', component: BasicLayoutComponent,
     children: [
       {path: 'home', component: HomeComponent},
-      {path: 'about', component: AboutComponent}
+      {path: 'about', component: AboutComponent},
+      {path: 'register', component: RegisterComponent}
     ]
   },
   {
